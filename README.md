@@ -1,5 +1,5 @@
 # ArticleManager Beta 1
-Posts Module For MODX Evo
+Posts Admin Module For MODX Evo
 * requires: Ditto snippet
 
 ## Like WP Posts Section
