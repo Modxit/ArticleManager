@@ -1,19 +1,18 @@
 /**
- * Article Manager
+ * SEO Report
  *
- * Manage Blog Post
+ * <strong>Beta 1</strong> Seo4Evo Report view
  *
- * @category	module
  * @version     Beta 1
  * @author      Author: Nicola Lambathakis http://www.tattoocms.it/
  * @internal	@modx_category Manager
- * @internal    @properties &ArticleModuleTitle=Main Page Module Title:;string;Article Manager &ArticleModuleIcon=AwesomeFont icon:;string;fa-pencil &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
+ * @internal    @properties &ArticleModuleTitle=Main Page Module Title:;string;Seo4Evo Report &ArticleModuleIcon=AwesomeFont icon:;string;fa-line-chart &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  */
 /******
-Article Manager
+SEO Report
 
-&ArticleModuleTitle=Main Page Module Title:;string;Article Manager &ArticleModuleIcon=AwesomeFont icon:;string;fa-pencil &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
+&ArticleModuleTitle=Main Page Module Title:;string;Seo4Evo Report &ArticleModuleIcon=AwesomeFont icon:;string;fa-line-chart &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
 ****
 */
 if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
@@ -25,13 +24,18 @@ $dittototal = $ListItems;
 
 // Table Row Tpl
 $rowTpl = '@CODE: <tr>
-<td class="bg-warning" width="5%">[+id+]</td>
-<td class="small"> <b>[+pagetitle+]</b></td>
-<td class="small">[+description+]</td>
-<td class="small">[+date+]</td>
-<td class="bg-info" width="5%"><a class="btn btn-sm btn-info" href="[(site_url)]index.php?id=[+id+]" target="_blank" title="preview"><i class="fa fa-eye"></i> View</a></td>
-<td class="bg-success" width="5%"><a class="btn btn-sm btn-success" onclick="window.open(\'index.php?a=27&id=[+id+]\',\'Elements\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')" style="cursor: pointer;"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
-<td class="bg-danger" width="5%"><a class="btn btn-sm btn-danger" href="index.php?a=6&id=[+id+]" title="delete"><i class="fa fa-trash-o"></i> Delete</a></td>
+<td class="bg-warning" width="5%">[+id+]</td><td class="small"> <b>[+pagetitle+]</b></td>
+<td class="small">[+CustomTitle+]</td>
+<td class="small">[+MetaKeywords+]</td>
+<td class="small">[+introtext+]</td>
+<td class="small">[+RobotsFollow+],[+RobotsIndex+]</td>
+<td class="small">[+sitemap_exclude+]</td>
+<td class="small">[+sitemap_priority+]</td>
+<td class="small">[+sitemap_changefreq+]</td>
+<td class="bg-info" width="5%"><a class="btn btn-sm btn-info" href="[(site_url)]index.php?id=[+id+]" target="_blank" title="preview"><i class="fa fa-eye"></i></a></td>
+<td class="bg-success" width="5%"><a class="btn btn-sm btn-success" onclick="window.open(\'index.php?a=27&id=[+id+]\',\'Elements\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')" style="cursor: pointer;"><i class="fa fa-pencil-square-o"></i></a></td>
+
+
 </tr>';
 
 // Ditto parameters
@@ -60,11 +64,15 @@ $ListOutput = '
    <thead>
           <th data-defaultsort="desc">Id</th>
       <th>Page Title</th>
-	  <th>Description</th>
-	   <th>Date</th>
+	  <th>CustomTitle</th>
+	   <th>MetaKeywords</th>
+	   <th>MetaDescription</th>
+	     <th>Robots</th>
+		 <th>Sitemap Exclude</th>
+		 <th>Sitemap Priority</th>
+		 <th>Sitemap update</th>
    <th>View</th>
       <th>Edit</th>
-      <th class="text-danger">Delete</th>
             </thead>
             <tbody>'.$Articlelist.'</tbody>
 			</table><br style="clear:both;height:1px;margin-top: -1px;line-height:1px;font-size:1px;" /> </div></div>';

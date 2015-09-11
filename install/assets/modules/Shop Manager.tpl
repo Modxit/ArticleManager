@@ -7,13 +7,13 @@
  * @version     Beta 1
  * @author      Author: Nicola Lambathakis http://www.tattoocms.it/
  * @internal	@modx_category Manager
- * @internal    @properties &ArticleModuleTitle=Main Page Module Title:;string;Shop Manager &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
+ * @internal    @properties &ArticleModuleTitle=Main Page Module Title:;string;Shop Manager &ArticleModuleIcon=AwesomeFont icon:;string;fa-shopping-cart &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  */
 /******
 Article Manager
 
-&ArticleModuleTitle=Main Page Module Title:;string;Shop Manager &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
+&ArticleModuleTitle=Main Page Module Title:;string;Shop Manager &ArticleModuleIcon=AwesomeFont icon:;string;fa-shopping-cart &ParentFolder=Parent folder:;string;0 &ListItems=Max items in List:;string;all &hideFolders= Hide Folders:;list;yes,no;yes &dittolevel= Depht:;string;3 &ListBoxFilter= Enable filter:;list;yes,no;no &dittofilter= Filter:;string; 
 ****
 */
 if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
@@ -53,7 +53,7 @@ $Articlelist = $modx->runSnippet('Ditto', $params);
 //Table Tpl
 $ListOutput = '	
 <div class="main-wrapper">
-           <div><h3 class="text-success"><i class="fa fa-pencil"></i> '.$ArticleModuleTitle.'</h3></div><hr>
+           <div><h3 class="text-success"><i class="fa '.$ArticleModuleIcon.'"></i> '.$ArticleModuleTitle.'</h3></div><hr>
 <div class="widget-stage overflowscroll"><table class="sortable table table-hover table-bordered table-condensed table-striped table-responsive">
    <thead>
           <th data-defaultsort="desc">Id</th>
